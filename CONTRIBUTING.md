@@ -68,3 +68,27 @@ index_when_else: int = 0
 img_paths: list[str] = []
 dicts: dict[str, str] = {}
 ```
+
+4. Always use '"' double quotes, only use single quotes when inside double quotes, no escape characters on quotes.
+
+5. Maximum to 79 characters per lines, no extensive use of new lines and trailing whitespaces.
+
+6. Only use new lines in declaration of new variables, functions, classes and after docstring, refer to PEP 0008, and the modifications below:
+
+```python
+def hello() -> None:
+    """docstrings."""
+
+    var_1: int = 3
+    var_a: float = 3.9 # if there are 2 declared variables, put a new line if the next line is not a variable declaration
+
+    if var_1 == 3:
+        ...
+
+    # if it is loop however, a blank variables is accepted
+    count: int = 0
+    img_paths: list[str] = []
+    for paths in next(walk(PATH))[2]:
+        ...
+
+```
