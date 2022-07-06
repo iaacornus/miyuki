@@ -18,7 +18,10 @@ class Logger:
                 "!>>",
                 "+>>",
                 "[!]",
-                "[>]"
+                "[>]",
+                "[+]",
+                ">>>",
+                "[=]"
             ]
         self.log: object = logging.getLogger("rich")
         file_log: object = logging.FileHandler(filename="iota-2.log")
@@ -52,3 +55,7 @@ class Logger:
                 self.log.info(f"[>] {message}")
             case "info": # to print information in the terminal
                 self.log.info(f"[=] {message}")
+            case "passed": # for successful process
+                self.log.info(f"[+] {message}")
+            case "Pinfo": # for successsful subprocess
+                self.log.info(f"+>> {message}")
