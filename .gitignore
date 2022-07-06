@@ -1,0 +1,9 @@
+venv/*
+*pycache*
+# for my nano backups
+*~
+
+# for my tests
+*__test__*
+experiments/*
+*test_env*
