@@ -40,6 +40,8 @@ class Logger:
             (c.) "subinfo" to simply log the happening subprocesses
             (d.) "proc_info" for major processes
             (e.) "info" for information about the process
+            (f.) "pass" for successful process
+            (g.) "Pinfo" for successful subprocess
         message: str, message to be logged.
         """
 
