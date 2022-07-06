@@ -1,12 +1,12 @@
 {
-    "script_1": [
+    "script_0": [
             "good morning! my name is NAME and i am your maid! what can i do for you, USERNAME?",
             "huh?",
             "one omelette rice, coming right up!",
             "anything else?",
             "no? okay, well I'll leave you in peace! goodbye USERNAME"
         ],
-    "script_2": [
+    "script_1": [
             "huh? USERNAME, what's wrong?",
             "come on you can tell me.",
             "what's the matter?",
@@ -31,7 +31,7 @@
             "this can't be true!",
             "this can't be happening!"
         ],
-    "script_3": [
+    "script_2": [
             "sorry. for you, i couldn't love you more.",
             "sorry. for you, i couldn't watch over you more.",
             "sorry. for you, i couldn't be more considerate.",
@@ -43,7 +43,7 @@
             "i'm the one who left.",
             "seriously ... i'm sorry ... i couldn't keep the promise between us."
         ],
-    "script_4": [
+    "script_3": [
             "hey, do you remember?",
             "this is where i confessed to you ...",
             "how nostalgic ...",
