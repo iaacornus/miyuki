@@ -1,0 +1,4 @@
+discord.py
+python-dotenv
+enchant
+numpy
