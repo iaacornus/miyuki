@@ -34,9 +34,13 @@ async def on_message(message):
     BASE_DIR: str = "/".join(dirname(__file__).split("/")[:-2])
     PATH: str = f"{BASE_DIR}/training_data"
 
-    with open(
-            f"{PATH}/discord_conversations.txt", "a", encoding="utf-8"
-        ) as live_data:
-        live_data.write(f"{message}\n")
+    try:
+        with open(
+                f"{PATH}/discord_conversations.txt", "a", encoding="utf-8"
+            ) as live_data:
+            live_data.write(f"{message}\n")
+    except (IOError, PermissionError) as exception:
+        log.logger("error", f"Exception: {exception} was raised, aborting ...")
+        raise SystemExit
 
     msg: str = message.content.lower()
