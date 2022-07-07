@@ -1,4 +1,5 @@
 from os import getenv
+from os.path import dirname
 
 import discord
 from dotenv import load_dotenv
@@ -29,5 +30,13 @@ async def on_read():
 async def on_message(message):
     if message.author == client.user:
         return
+
+    BASE_DIR: str = "/".join(dirname(__file__).split("/")[:-2])
+    PATH: str = f"{BASE_DIR}/training_data"
+
+    with open(
+            f"{PATH}/discord_conversations.txt", "a", encoding="utf-8"
+        ) as live_data:
+        live_data.write(f"{message}\n")
 
     msg: str = message.content.lower()
