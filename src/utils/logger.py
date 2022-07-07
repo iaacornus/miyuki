@@ -24,7 +24,7 @@ class Logger:
                 "[=]"
             ]
         self.log: object = logging.getLogger("rich")
-        file_log: object = logging.FileHandler(filename="iota-2.log")
+        file_log: object = logging.FileHandler(filename="miyuki.log")
 
         file_log.setLevel(logging.INFO)
         file_log.setFormatter(logging.Formatter("%(levelname)s %(message)s"))
