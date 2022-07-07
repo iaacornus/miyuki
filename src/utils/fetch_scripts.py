@@ -5,12 +5,14 @@ from json import load
 from typing import NoReturn
 
 
-def fetch_script() -> None | NoReturn:
+def fetch_script(log: object) -> None | NoReturn:
     """Fetch the training data from the curated scripts stored in json file."""
 
     BASE_DIR: str = "/".join(dirname(__file__).split("/")[:-2])
     PATH: str = f"{BASE_DIR}/training_data"
     PATH_PERSONALITIES: str = f"{BASE_DIR}/training_data/personalities"
+
+    log.logger("proc_info", f"Fetching scripts from {PATH} ...")
 
     try:
         training_data: dict[str, str] = {}
@@ -32,7 +34,14 @@ def fetch_script() -> None | NoReturn:
                     training_data[
                             f"{file.split('.')[0]}_{i}"
                         ] = script[f"script_{i}"]
-    except (FileNotFoundError, PermissionError, IOError, SystemError):
+    except (
+            FileNotFoundError,
+            PermissionError,
+            IOError,
+            SystemError
+        ) as exception:
+        log.logger("error", f"Exception: {exception} raised, aborting ...")
         raise SystemExit
     else:
+        log.logger("success", "Training data fetched successfully.")
         return training_data
