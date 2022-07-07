@@ -22,12 +22,12 @@ if __name__ != "__main__":
 
 
 @client.event
-async def on_read():
+async def on_read() -> None:
     log.logger("passed", "Successfully started the discord bot.")
 
 
 @client.event
-async def on_message(message):
+async def on_message(message: str) -> None:
     if message.author == client.user:
         return
 
