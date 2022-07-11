@@ -7,3 +7,4 @@ venv
 *__test__*
 experiments/*
 *test_env*
+*.log
